@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("PayKeyboard", [], factory);
+		define("VueContentFilter", [], factory);
 	else if(typeof exports === 'object')
-		exports["PayKeyboard"] = factory();
+		exports["VueContentFilter"] = factory();
 	else
-		root["PayKeyboard"] = factory();
+		root["VueContentFilter"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -79,13 +79,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-let plugin = {};
-plugin.install = function(Vue, options) {
+var plugin = {};
+plugin.install = function (Vue, options) {
     //
     function change(val) {
         if (!val) return;
-        let r = val.split(" ");
-        for (let i = 0; i < r.length; i++) {
+        var r = val.split(" ");
+        for (var i = 0; i < r.length; i++) {
             r[i] = r[i].slice(0, 1).toUpperCase() + r[i].slice(1, r.length);
         }
         return r.join(" ");
@@ -95,7 +95,6 @@ plugin.install = function(Vue, options) {
     Vue.filter("change", change);
 };
 /* harmony default export */ __webpack_exports__["default"] = (plugin);
-
 
 /***/ })
 /******/ ]);

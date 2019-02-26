@@ -9,13 +9,13 @@
 ----------
 
 
-### 使用npm进行安装
+#### 使用npm进行安装
 ```sh
 npm install vue-content-filter --save
 ```
 
 ----------
-### 注册插件
+#### 注册插件
 ```javascript
 //main.js
 import VueContentFilter from "vue-content-filter";
@@ -32,7 +32,7 @@ Vue.use(VueContentFilter); // Vue2.x
 
 
 ### 现有 5 个 API 可供使用
-- [Capital](#Capital)
+- [CapitalLetter](#CapitalLetter)
 - [ReplaceVal](#ReplaceVal)
 - [PlaceHolder](#PlaceHolder)
 - [Omit](#Omit)
@@ -62,10 +62,11 @@ new Vue({
 
 #### *ReplaceVal*
 替换目标字符串，接收一个数组，数组元素为对象，每个对象有2个属性，*target*为目标值，*replacement*为替换值。
->**可选属性 ** &nbsp;&nbsp;&nbsp;*isSingle*
-&nbsp;&nbsp;&nbsp;**只适用于英文过滤**
-&nbsp;&nbsp;&nbsp;每个对象包含布尔类型的*isSingle*属性，*isSingle*默认为*false*。
-&nbsp;&nbsp;&nbsp;isSingle为true时，目标字符串为独立词组。
+
+>**可选属性** &nbsp;&nbsp;&nbsp;*isSingle*
+>&nbsp;&nbsp;&nbsp;**只适用于英文过滤**
+>&nbsp;&nbsp;&nbsp;每个对象包含布尔类型的*isSingle*属性，*isSingle*默认为*false*。
+>&nbsp;&nbsp;&nbsp;isSingle为true时，目标字符串为独立词组。
 ```javascript
 <p class="text">{{msg|ReplaceVal(arr1)}}</p>
 //'this is ReplaceVal' => 'thwas was ReplaceVal'
@@ -163,7 +164,7 @@ new Vue({
 <p class="text">{{msg1|Hidden('Hidden')}}</p>
 //'这是Hidden' => '这是'
 
-<p class="text">{{msg2|Hidden(['们','天'])}}</p>
+<p class="text">{{msg2|Hidden(['们','天']')}}</p>
 //'你们他们，今天明天' =>'你他，今明'
 new Vue({
     data:{

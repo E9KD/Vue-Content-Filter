@@ -1,10 +1,10 @@
 # Vue-Content-Filter
 
-## 如何使用
+<!-- ## 如何使用 -->
 
 ### 安装 **vue-content-filter**
 
----
+
 
 #### 使用 npm 进行安装
 
@@ -12,7 +12,7 @@
 npm install vue-content-filter --save
 ```
 
----
+
 
 #### 注册插件
 
@@ -23,11 +23,11 @@ import Vue from "vue";
 Vue.use(VueContentFilter); // Vue2.x
 ```
 
----
+
 
 ### 使用 **Vue-Comtent-filter**
 
----
+
 
 ### 现有 5 个 API 可供使用
 
@@ -37,7 +37,6 @@ Vue.use(VueContentFilter); // Vue2.x
 - [Omit](#Omit)
 - [Hidden](#Hidden)
 
----
 
 #### _Capital_
 
@@ -47,6 +46,7 @@ Vue.use(VueContentFilter); // Vue2.x
 
 <p class="text">{{msg|Capital}}</p>
 // this is capital => This Is Capital
+
 new Vue({
     data:{
          msg:'this is capital'
@@ -54,7 +54,6 @@ new Vue({
 })
 ```
 
----
 
 #### _ReplaceVal_
 
@@ -106,7 +105,6 @@ new Vue({
 })
 ```
 
----
 
 #### _PlaceHolder_
 
@@ -128,7 +126,6 @@ new Vue({
 })
 ```
 
----
 
 #### _Omit_
 
@@ -155,7 +152,6 @@ new Vue({
 })
 ```
 
----
 
 #### _Hidden_
 

@@ -1,7 +1,7 @@
 {
   "name": "vue-content-filter",
   "description": "A Vue.js filter plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "E9KD <931262536@qq.com>",
   "license": "MIT",
   "private": false,

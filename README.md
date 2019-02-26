@@ -9,13 +9,13 @@
 ----------
 
 
-###使用npm进行安装
+### 使用npm进行安装
 ```sh
 npm install vue-content-filter --save
 ```
 
 ----------
-###注册插件
+### 注册插件
 ```javascript
 //main.js
 import VueContentFilter from "vue-content-filter";
@@ -163,7 +163,7 @@ new Vue({
 <p class="text">{{msg1|Hidden('Hidden')}}</p>
 //'这是Hidden' => '这是'
 
-<p class="text">{{msg2|Hidden(['们','天']')}}</p>
+<p class="text">{{msg2|Hidden(['们','天'])}}</p>
 //'你们他们，今天明天' =>'你他，今明'
 new Vue({
     data:{

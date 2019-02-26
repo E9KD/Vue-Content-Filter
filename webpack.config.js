@@ -1,4 +1,5 @@
 var path = require("path");
+var webpack = require("webpack");
 module.exports = {
   // entry: './src/main.js', // 项目入口 我们通过npm run dev 就是从这里进去的 我们通过run build 打包编译也是
   // 因为我们要打包的插件在lib里面 所以稍稍改一下
@@ -20,5 +21,6 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [new webpack.optimize.UglifyJsPlugin()]
 };

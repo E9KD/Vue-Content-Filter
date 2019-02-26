@@ -31,7 +31,7 @@ Vue.use(VueContentFilter); // Vue2.x
 
 ### 现有 5 个 API 可供使用
 
-- [CapitalLetter](#CapitalLetter)
+- [Capital](#Capital)
 - [ReplaceVal](#ReplaceVal)
 - [PlaceHolder](#PlaceHolder)
 - [Omit](#Omit)

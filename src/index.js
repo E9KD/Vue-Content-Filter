@@ -1,7 +1,7 @@
 let plugin = {};
 plugin.install = function(Vue, options) {
   //首字大写
-  function CapitalLetter(val) {
+  function Capital(val) {
     if (!val) return;
     let r = val.split(" ");
     for (let i = 0; i < r.length; i++) {
@@ -66,7 +66,7 @@ plugin.install = function(Vue, options) {
   }
 
   // 全局挂载
-  Vue.filter("CapitalLetter", CapitalLetter);
+  Vue.filter("Capital", Capital);
   Vue.filter("ReplaceVal", ReplaceVal);
   Vue.filter("PlaceHolder", PlaceHolder);
   Vue.filter("Omit", Omit);

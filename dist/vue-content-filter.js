@@ -81,18 +81,73 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var plugin = {};
 plugin.install = function (Vue, options) {
-    //
-    function change(val) {
-        if (!val) return;
-        var r = val.split(" ");
-        for (var i = 0; i < r.length; i++) {
-            r[i] = r[i].slice(0, 1).toUpperCase() + r[i].slice(1, r.length);
-        }
-        return r.join(" ");
+  //首字大写
+  function CapitalLetter(val) {
+    if (!val) return;
+    var r = val.split(" ");
+    for (var i = 0; i < r.length; i++) {
+      r[i] = r[i].slice(0, 1).toUpperCase() + r[i].slice(1, r.length);
     }
+    return r.join(" ");
+  }
 
-    // 全局挂载
-    Vue.filter("change", change);
+  // 替换字符
+  function ReplaceVal(val, param) {
+    if (!val) return;
+    var r = val;
+    var p = param;
+
+    var _loop = function _loop(i) {
+      if (p[i].isSingle) {
+        r = r.split(" ").map(function (x) {
+          var n = x.indexOf(p[i].target);
+          return x = n == 0 && p[i].target.length == x.length ? x.replace(new RegExp(param[i].target, "g"), param[i].replacement) : x;
+        }).join(" ");
+      } else {
+        r = r.replace(new RegExp(param[i].target, "g"), param[i].replacement);
+      }
+    };
+
+    for (var i = 0; i < p.length; i++) {
+      _loop(i);
+    }
+    return r;
+  }
+
+  // 给定默认值
+  function PlaceHolder(val, param) {
+    var r = !val ? param : val;
+    return r;
+  }
+
+  // 省略字符
+  function Omit(val, param) {
+    if (typeof param != "number") console.error("The input must be a number.");
+    var r = val;
+    r = r.substring(0, param) + "...";
+    return r;
+  }
+
+  // 删除字符
+  function Hidden(val, param) {
+    if (!param) return val;
+    var r = val;
+    if (Array.isArray(param)) {
+      for (var i = 0; i < param.length; i++) {
+        r = r.replace(new RegExp(param[i], "g"), "");
+      }
+    } else {
+      r = r.replace(new RegExp(param, "g"), "");
+    }
+    return r;
+  }
+
+  // 全局挂载
+  Vue.filter("CapitalLetter", CapitalLetter);
+  Vue.filter("ReplaceVal", ReplaceVal);
+  Vue.filter("PlaceHolder", PlaceHolder);
+  Vue.filter("Omit", Omit);
+  Vue.filter("Hidden", Hidden);
 };
 /* harmony default export */ __webpack_exports__["default"] = (plugin);
 

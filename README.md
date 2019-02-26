@@ -9,13 +9,13 @@
 ----------
 
 
-####使用npm进行安装
+###使用npm进行安装
 ```sh
 npm install vue-content-filter --save
 ```
 
 ----------
-####注册插件
+###注册插件
 ```javascript
 //main.js
 import VueContentFilter from "vue-content-filter";
@@ -32,7 +32,7 @@ Vue.use(VueContentFilter); // Vue2.x
 
 
 ### 现有 5 个 API 可供使用
-- [CapitalLetter](#CapitalLetter)
+- [Capital](#Capital)
 - [ReplaceVal](#ReplaceVal)
 - [PlaceHolder](#PlaceHolder)
 - [Omit](#Omit)
@@ -167,11 +167,10 @@ new Vue({
 //'你们他们，今天明天' =>'你他，今明'
 new Vue({
     data:{
-        hidden:'Hidden'
+         hidden:'Hidden'
          msg:'this is Omit',
          msg1:'这是Hidden',
          msg2:' 你们他们，今天明天'
-         
     }
 })
 ```

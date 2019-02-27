@@ -40,7 +40,7 @@ Vue.use(VueContentFilter); // Vue2.x
 
 #### _Capital_
 
-对英文字符串首字母大写。
+首字符大写。
 
 ```javascript
 
